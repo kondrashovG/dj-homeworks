@@ -41,7 +41,7 @@ def dish(request):
     else:
         servings = int(servings)
     for ingredients in DATA[name_dish]:
-        quantity[ingredients] = DATA[name_dish][ingredients] * servings
+        quantity[ingredients] = round(DATA[name_dish][ingredients] * servings, 2)
     context = {
         'recipe': {name_dish: quantity}
     }
